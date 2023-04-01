@@ -37,7 +37,7 @@ import de.schildbach.pte.dto.SuggestLocationsResult;
  */
 public class SncbProviderLiveTest extends AbstractProviderLiveTest {
     public SncbProviderLiveTest() {
-        super(new SncbProvider(secretProperty("sncb.api_authorization")));
+        super(new SncbProvider());
     }
 
     @Test
@@ -54,7 +54,7 @@ public class SncbProviderLiveTest extends AbstractProviderLiveTest {
 
     @Test
     public void queryDepartures() throws Exception {
-        final QueryDeparturesResult result1 = queryDepartures("240229", false);
+        final QueryDeparturesResult result1 = queryDepartures("Brussel-Zuid", false);
         print(result1);
 
         final QueryDeparturesResult result2 = queryDepartures("8813003", false);
